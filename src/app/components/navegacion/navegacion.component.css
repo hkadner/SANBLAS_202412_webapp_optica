@@ -1,0 +1,39 @@
+.navbar {
+    background-color: #525252;  /* Color de fondo de la barra */
+    padding: 10px 20px;
+}
+
+.nav-list {
+    list-style-type: none;  /* Eliminar los puntos de lista */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centra los elementos de la lista */
+}
+
+.nav-list li {
+    margin-right: 30px;  /* Espacio entre los elementos de la barra */
+}
+
+.nav-list li:last-child {
+    margin-right: 0;  /* Eliminar el margen del último elemento */
+}
+
+/* Estilos de los enlaces */
+.nav-list a {
+    text-decoration: none;  /* Quitar subrayado */
+    color: white;  /* Color del texto */
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Animación suave para el color */
+}
+
+/* Efecto de hover (pasar el mouse por encima) */
+.nav-list a:hover {
+    color: #a78604;  /* Cambia el color al pasar el ratón */
+}
+
+.enlace-activo {
+    text-decoration: underline !important; 
+    color: #fec928 !important;
+}
