@@ -9,6 +9,19 @@
     flex-direction: column;
     height: 100vh;
 }
+#form-busqueda {
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding-top: 1em;
+    text-align: center;
+}
+#form-busqueda input {
+    padding: 5px;
+    font-size: 18px;
+    width: 50%;
+}
+
 table {
     width: 80%;
     margin-top: 20px;

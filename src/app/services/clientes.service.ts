@@ -1,16 +1,21 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { ICliente } from '../interfaces/icliente';
+import { LocalStorageService } from './local-storage.service';
+
+const KEY_CLIENTES : string = "clientes";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClientesService {
+  private localStorageService = inject(LocalStorageService);
   private listaClientes = new Array<ICliente>();
   constructor() { 
     this.cargarClientes();
   }
   public addCliente(nuevoCliente : ICliente) : void {
     this.listaClientes.push({...nuevoCliente});
+    this.localStorageService.store(KEY_CLIENTES, JSON.stringify(this.listaClientes));//stringify convierte a cadena de caracteres
     console.log(this.listaClientes);
   }
 
@@ -19,19 +24,11 @@ export class ClientesService {
   }
 
   private cargarClientes(){
-    let cliente1 : ICliente = {
-      nombre : 'Cliente 1',
-      telefono : '123456789_1',
-      email : 'cliente1@gmail.com',
-      dioptrias : 0.25
-    };
-    let cliente2 : ICliente = {
-      nombre : 'Cliente 2',
-      telefono : '123456789_2',
-      email : 'cliente2@gmail.com',
-      dioptrias : 0.50
-    };
-    this.listaClientes.push(cliente1);
-    this.listaClientes.push(cliente2);
+    let stringClientes = this.localStorageService.retrieve(KEY_CLIENTES);
+    let clientesAlmacenados = stringClientes!=null ? JSON.parse(stringClientes) : [];
+    clientesAlmacenados.forEach((cliente: ICliente)  => {
+      this.listaClientes.push(cliente);
+    });
   }
+  
 }

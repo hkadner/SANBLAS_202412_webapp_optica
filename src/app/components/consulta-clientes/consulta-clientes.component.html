@@ -1,7 +1,7 @@
+<div id="form-busqueda">
+    <input type="text" placeholder="Nombre" [(ngModel)]="textoBusqueda" (input)="filtrarClientes()">
+</div>
 <div id="listado">
-
-    <caption>Listado de Clientes</caption>
-
     <table>
         <thead>
             <tr>
@@ -12,7 +12,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let cliente of clientesService.getClientes()">
+            <tr *ngFor="let cliente of listadoClientesFiltrados">
                 <td>{{cliente.nombre}}</td>
                 <td>{{cliente.telefono}}</td>
                 <td>{{cliente.email}}</td>
