@@ -30,7 +30,8 @@
 
 /* Efecto de hover (pasar el mouse por encima) */
 .nav-list a:hover {
-    color: #a78604;  /* Cambia el color al pasar el ratón */
+    text-decoration: underline;
+    color: #fec928;  /* Cambia el color al pasar el ratón */
 }
 
 .enlace-activo {

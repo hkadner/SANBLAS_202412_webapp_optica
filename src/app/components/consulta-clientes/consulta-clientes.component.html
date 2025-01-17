@@ -1,1 +1,24 @@
-<p>consulta-clientes works!</p>
+<div id="listado">
+
+    <caption>Listado de Clientes</caption>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Teléfono</th>
+                <th>Email</th>
+                <th>Dioptrías</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cliente of clientesService.getClientes()">
+                <td>{{cliente.nombre}}</td>
+                <td>{{cliente.telefono}}</td>
+                <td>{{cliente.email}}</td>
+                <td class="numero">{{cliente.dioptrias}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

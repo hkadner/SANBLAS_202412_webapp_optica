@@ -6,7 +6,6 @@ import { ContactoComponent } from './components/contacto/contacto.component';
 import { CreditosComponent } from './components/creditos/creditos.component';
 
 export const routes: Routes = [
-    
     {path:'crear',component:NuevoClienteComponent,pathMatch:'full'},
     {path:'buscar',component:ConsultaClientesComponent,pathMatch:'full'},
     {path:'contacto',component:ContactoComponent,pathMatch:'full'},
